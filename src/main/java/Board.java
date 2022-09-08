@@ -3,7 +3,7 @@ public class Board {
 
     public static Cell topLeftNeighbour;
 
-    private enum Positions{
+    private enum Positions {
         TOP,
         BOTTOM,
         LEFT,
@@ -15,44 +15,36 @@ public class Board {
     }
 
     public Cell[][] grid;
-    public Board(){
+
+    public Board() {
         grid = new Cell[10][10];
     }
 
     public int aliveNeighbours(Cell cell) {
-    /*int alive = 0;
+        int alive = 0;
         Cell[] neighbours = getNeighbours(cell);
-        for (Cell neighbour:neighbours) {
-            if(neighbour.status){
+
+        for (Cell neighbour : neighbours) {
+            if (neighbour.status) {
                 alive++;
             }
         }
-        return alive;*/
-        int count = 0;
-        if (topLeftNeighbour.status) {
-            count += 1;
-        }
-        return count;
+        return alive;
     }
 
     private Cell[] getNeighbours(Cell cell) {
-    /*Cell[] neighbours = new Cell[9];
-    int position=0;
-        for (int i = cell.x-1; i <=cell.x+1 ; i++) {
-            neighbours[position]=grid[i][cell.y-1];
-            if(i!=cell.x){
-                neighbours[position+1]=grid[i][cell.y];
-            }
-            neighbours[position+2]=grid[i][cell.y+1];
-            position+=3;
-        }
-        return neighbours;
-     */
-        int topLeftX = cell.x - 1;
-        int topLeftY = cell.y - 1;
-        topLeftNeighbour = grid[topLeftX][topLeftY];
 
-        return null;
+        Cell[] neighbours = new Cell[8];
+
+        neighbours[0] = grid[cell.x - 1][cell.y - 1];
+        neighbours[1] = grid[cell.x][cell.y - 1];
+        neighbours[2] = grid[cell.x + 1][cell.y - 1];
+        neighbours[3] = grid[cell.x - 1][cell.y];
+        neighbours[4] = grid[cell.x + 1][cell.y];
+        neighbours[5] = grid[cell.x - 1][cell.y + 1];
+        neighbours[6] = grid[cell.x][cell.y + 1];
+        neighbours[7] = grid[cell.x + 1][cell.y + 1];
+        return neighbours;
     }
 
 }

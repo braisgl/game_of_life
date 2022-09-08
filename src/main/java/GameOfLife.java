@@ -1,14 +1,14 @@
 public class GameOfLife {
 
     Board board;
-    public GameOfLife(){
+
+    public GameOfLife() {
         this.board = new Board();
     }
 
-    public void nextGen(){
+    public void nextGen() {
         board.grid[0][0].changeStatus();
     }
-
 
 
 }
