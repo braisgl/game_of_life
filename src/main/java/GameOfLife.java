@@ -4,7 +4,12 @@ public class GameOfLife {
 
     }
 
-    public boolean nextGen(){
+    public void nextGen(){
+
+    }
+
+    boolean cellStatus() {
         return false;
     }
+    
 }
