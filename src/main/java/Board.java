@@ -1,5 +1,8 @@
 public class Board {
 
+
+    public static Cell topLeftNeighbour;
+
     private enum Positions{
         TOP,
         BOTTOM,
@@ -25,7 +28,11 @@ public class Board {
             }
         }
         return alive;*/
-        return 0;
+        int count = 0;
+        if (topLeftNeighbour.status) {
+            count += 1;
+        }
+        return count;
     }
 
     private Cell[] getNeighbours(Cell cell) {
@@ -41,6 +48,10 @@ public class Board {
         }
         return neighbours;
      */
+        int topLeftX = cell.x - 1;
+        int topLeftY = cell.y - 1;
+        topLeftNeighbour = grid[topLeftX][topLeftY];
+
         return null;
     }
 
