@@ -14,4 +14,6 @@ public class GameOfLifeShould {
         Assertions.assertEquals(false,gameOfLife.board.grid[0][0].status);
     }
 
+
+
 }

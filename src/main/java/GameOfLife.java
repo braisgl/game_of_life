@@ -6,6 +6,9 @@ public class GameOfLife {
     }
 
     public void nextGen(){
-
+        board.grid[0][0].changeStatus();
     }
+
+
+
 }
