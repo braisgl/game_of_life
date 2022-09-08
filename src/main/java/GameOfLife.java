@@ -1,15 +1,11 @@
 public class GameOfLife {
 
-    public GameOfLife(boolean[][] board){
-
+    Board board;
+    public GameOfLife(){
+        this.board = new Board();
     }
 
     public void nextGen(){
 
     }
-
-    boolean cellStatus() {
-        return false;
-    }
-    
 }

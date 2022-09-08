@@ -1,24 +1,13 @@
 public class Cell {
 
-    private boolean status;
+    public boolean status;
 
-    public Cell() {
-        this.status = true;
-    }
-
-    public boolean status() {
-
-        return status;
+    public Cell(boolean status) {
+        this.status = status;
     }
 
     public void changeStatus() {
-        if (status){
-            status = false;
-        }
-        if (status = false){
-            status = true;
-        }
-
+        status = !status;
     }
 
 
